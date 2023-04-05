@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import validerLangage from "../tools/langages";
 function valider(input) {
-  let regex = "/projet\d{0,10}/i";
+  let regex = /projet\d{0,10}/i;
   return regex.test(input);
 }
 export default function AddProjet(props) {
