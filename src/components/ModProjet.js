@@ -33,7 +33,7 @@ export default function ModProjet(props) {
     <div className="App">
       <div>
         <div>
-          <h2>Ajouter un projet</h2>
+          <h2>Modifier le projet</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
           <div>
