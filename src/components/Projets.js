@@ -18,6 +18,11 @@ function Projets() {
   };
 
   const deleteProjet = (id) => {
+    if (id < 11)
+    {
+      alert ("les projets 1 à 10 ne peuvent pas être supprimés")
+      return;
+    }
     fetch(url + "/" + id, { method: "DELETE" })
       .then(setProjets(projets.filter((el) => el.idProjet !== id)))
       .catch((err) => console.log(err));
@@ -33,6 +38,11 @@ function Projets() {
       });
   };
   const modifierProjet = (p) => {
+    if (p.idProjet < 11)
+    {
+      alert ("les projets 1 à 10 ne peuvent pas être modifiés")
+      return;
+    }
     let data = JSON.stringify(p);
     let head = { "content-type": "application/json" };
     fetch(url, { method: "PUT", headers: head, body: data })
