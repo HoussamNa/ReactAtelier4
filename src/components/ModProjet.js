@@ -1,12 +1,8 @@
 import React from 'react'
 import { useState } from "react";
-import validerLangage from '../tools/langages';
 
 export default function ModProjet(props) {
-  const  valider=(input)=> {
-    let regex = /projet\d{0,10}/i;
-    return regex.test(input);
-  }
+
   const [projet, setProjet] = useState(props.projet);
 
   const {idProjet, description, langage} = projet;
@@ -17,16 +13,6 @@ export default function ModProjet(props) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!valider(projet.description))
-    {
-      alert ("la description est incorret: 'projet + 10 chiffres max");
-      return;
-    }
-    if (!validerLangage(projet.langage))
-    {
-      alert ("le langage n'est pas valide");
-      return;
-    }
     props.onEdit (projet);
   };
 
